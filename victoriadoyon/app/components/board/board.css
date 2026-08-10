@@ -1,0 +1,22 @@
+.board {
+    width: calc(100% - 2rem);
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+
+.board svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+.board foreignObject {
+    overflow: visible;
+}
+
+.board__node-html {
+    width: 100%;
+    height: 100%;
+}

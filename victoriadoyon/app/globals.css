@@ -6,6 +6,12 @@
   --font-color: #F5F3FF;
   --font-color-muted: #C1C1C8;
   --contrast: #ECB1BB;
+  --shadow:rgba(0,0,0,0.55);
+
+  --font-heading: var(--font-cormorant-garamond), Georgia, serif;
+  --font-body: var(--font-inter), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), 'Courier New', monospace;
+  --font-name: var(--font-special-elite), 'Courier New', monospace;
 }
 
 @theme inline {
@@ -15,15 +21,33 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--font-color);
+  font-family:  var(--font-body);
+}
+
+h1 {
+  font-size: 2rem;
+  color: var(--contrast);
+  font-family:  var(--font-heading);
+}
+
+h2 {
+  font-size: 6rem;
+  color: var(--font-color);
+  font-family:  var(--font-heading);
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: var(--font-color-muted);
+  font-family:  var(--font-heading);
 }

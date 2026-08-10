@@ -1,0 +1,21 @@
+.link {
+    margin: 1rem;
+    color: #C1C1C880;
+    
+}
+
+.link:hover {
+    color: #ECB1BB
+}
+
+header {
+    padding: 1.2rem 3rem;
+    font-family: var(--font-mono);
+    color: var(--font-color-muted);
+    font-size: small;
+    border-bottom: thin solid #C1C1C880;
+}
+
+header div {
+    color: var(--contrast)
+}

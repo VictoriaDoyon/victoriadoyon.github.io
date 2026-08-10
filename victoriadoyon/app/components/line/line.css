@@ -1,0 +1,28 @@
+.draw-animation {
+    stroke: var(--font-color-muted);
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: draw-on-load 1.2s ease-in-out forwards;
+    transition: stroke 180ms ease;
+}
+
+.draw-animation:hover {
+    stroke: var(--contrast);
+    animation: draw-on-hover 1.2s ease-in-out forwards;
+}
+
+@keyframes draw-on-load {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes draw-on-hover {
+    from {
+        stroke-dashoffset: 1;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
