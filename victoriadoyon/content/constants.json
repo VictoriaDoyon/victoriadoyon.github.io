@@ -24,13 +24,13 @@
             "Title": "For engineering teams",
             "Subtitle": "Making AI work when the demo is over.",
             "Blurb": "I help teams design, evaluate, and productionize AI systems — particularly agentic workflows, RAG, evaluation infrastructure, and Responsible AI readiness.",
-            "ButtonText": "consulting"
+            "AriaLabel": "consulting"
         },
         "Research": {
             "Title": "For research",
             "Subtitle": "Understanding how we can make AI better.",
             "Blurb": "I'm interested in research around LLM and agent evaluation, retrieval, NLP, explainable and Responsible AI, and the intersection of machine learning and neuroscience.",
-            "ButtonText": "research"
+            "AriaLabel": "research"
         },
         "Intersection": "To me, these aren't separate interests. Better research informs better systems, and production systems expose the questions worth researching."
     },
@@ -45,12 +45,12 @@
             {
                 "Title": "Retrieval & Grounded AI",
                 "Blurb": "Designing retrieval systems that give models the right information at the right time — and measuring whether that grounding actually improves the result.",
-                "Tags": ["rag", "vector search", "data pipelines", "retrieval evaluation"]
+                "Tags": ["RAG", "Vector Search", "Data Pipelines", "Retrieval Evaluation"]
             },
             {
                 "Title": "AI Systems Architecture",
                 "Blurb": "Taking AI capabilities from prototype to production through scalable architecture, deployment, testing, security, and operational readiness.",
-                "Tags": ["architecture", "mlops", "cloud", "production readiness"]
+                "Tags": ["Architecture", "MlLOps", "Cloud", "Production Readiness"]
             }
         ]
     },
@@ -78,14 +78,14 @@
                 "Title": "A Photo-Realistic Simulation and Test Platform for Autonomous Vehicles Research",
                 "Link": "",
                 "Blurb": "My first published research project explored machine-learning-based autonomous driving in a photo-realistic simulation environment, connecting steering prediction models with MATLAB and Unreal Engine.",
-                "Button": "read publication"
+                "Button": "Read publication"
             }
         ]
     },
     "Experience": {
         "Work": [
             {
-                "Title": "Program Assistant — CHPC",
+                "Title": "Program Assistant (CHPC)",
                 "Employer": "University of Utah / SCI Institute",
                 "Start": "2026",
                 "End": "Present",
@@ -96,21 +96,21 @@
                 "Employer": "Microsoft",
                 "Start": "2024",
                 "End": "2026",
-                "Blurb": "Agentic AI · RAG & AI Search · Responsible AI · AI infrastructure · production reliability"
+                "Blurb": "Agentic AI · RAG & AI Search · Responsible AI · AI infrastructure · Production Reliability"
             },
             {
                 "Title": "Software Engineer",
                 "Employer": "Microsoft",
                 "Start": "2022",
                 "End": "2024",
-                "Blurb": "Full-stack systems · anomaly detection · cloud infrastructure · security · operational engineering"
+                "Blurb": "Full-stack systems · Anomaly Detection · Cloud Infrastructure · Security · Operational Engineering"
             },
             {
                 "Title": "Engineer",
                 "Employer": "HereAfter AI",
                 "Start": "2021",
                 "End": "2022",
-                "Blurb": "Conversational AI · NLP · transformer experimentation · full-stack development"
+                "Blurb": "Conversational AI · NLP · Transformer Experimentation · Full-stack Development"
             }
         ]
     },

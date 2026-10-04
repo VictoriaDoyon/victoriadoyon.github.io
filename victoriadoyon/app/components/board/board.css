@@ -11,12 +11,3 @@
     height: auto;
     overflow: visible;
 }
-
-.board foreignObject {
-    overflow: visible;
-}
-
-.board__node-html {
-    width: 100%;
-    height: 100%;
-}

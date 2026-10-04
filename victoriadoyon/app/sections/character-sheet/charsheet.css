@@ -1,0 +1,13 @@
+.charactersheet {
+    display: flex;
+    flex-direction: row;
+}
+
+.charactersheet-left{
+    display: flex;
+}
+
+.charactersheet-right {
+    display: flex;
+    flex-direction: column;
+}

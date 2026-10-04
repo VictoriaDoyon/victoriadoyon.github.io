@@ -1,0 +1,12 @@
+.twoloves {
+    display: flex;
+}
+
+.masknode {
+    display: flex;
+    flex-direction: column;
+}
+
+.masknode hgroup{
+    font-size: 1.5rem;
+}

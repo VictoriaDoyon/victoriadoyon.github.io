@@ -1,5 +1,6 @@
 import Link from "next/link";
 import "./header.css"
+import { ResumeUrl } from "@/app/data";
 
 export default function Header() {
   return (
@@ -20,6 +21,9 @@ export default function Header() {
             </Link>
             <Link className="link" href={"/"}>
                 Contact
+            </Link>
+            <Link className="link" href={ResumeUrl}>
+                Resume
             </Link>
         </nav>
     </header>

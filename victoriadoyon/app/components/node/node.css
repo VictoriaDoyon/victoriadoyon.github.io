@@ -7,8 +7,10 @@
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    padding: 0.25rem 0.5rem;
+    padding: 1rem 2.5rem;
     transition: border-color 180ms ease, transform 180ms ease;
+    background-color: var(--color-foreground);
+    margin: 0.5rem;
 }
 
 .node:hover, .node:focus-visible{
@@ -19,11 +21,11 @@
 .node::before{
     content:'';
     position: absolute;
-    top: -0.35rem;
-    left: 18%;
-    width: 60%;
-    height: 50%;
-    background:rgba(193,193,200,0.4);/*  rgba(236,177,187,0.5); */
+    top: -1.2rem;
+    left: 40%;
+    width: 20%;
+    height: 30%;
+    background:rgba(193,193,200,0.7);
     transform:rotate(-3deg);
     box-shadow:0 2px 4px var(--shadow);
 }
@@ -33,4 +35,8 @@
     font-size: 0.8rem;
     display: block;
     line-height: 1;
+}
+
+foreignObject {
+    overflow: visible;
 }

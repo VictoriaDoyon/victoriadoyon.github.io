@@ -1,0 +1,15 @@
+.focusnode hgroup{
+    font-size: 1.5rem;
+}
+.focus-area-tags-div {
+    margin-top: 15px;
+}
+
+.focus-area-tag{
+    border: 3px solid var(--contrast);
+    border-radius: 5px;
+    background-color: var(--contrast);
+    color: var(--foreground);
+    margin: 10px;
+    padding: 0px 5px;
+}

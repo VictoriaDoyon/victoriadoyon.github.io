@@ -12,6 +12,7 @@
   --font-body: var(--font-inter), system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), 'Courier New', monospace;
   --font-name: var(--font-special-elite), 'Courier New', monospace;
+  --font-handwriting: var(--font-playwrite-brasil), cursive;
 }
 
 @theme inline {
@@ -35,19 +36,23 @@ body {
 }
 
 h1 {
-  font-size: 2rem;
   color: var(--contrast);
   font-family:  var(--font-heading);
 }
 
 h2 {
-  font-size: 6rem;
   color: var(--font-color);
   font-family:  var(--font-heading);
 }
 
 h3 {
-  font-size: 1.5rem;
   color: var(--font-color-muted);
   font-family:  var(--font-heading);
+}
+
+.note{
+    padding: 1rem;
+    font-size: smaller;
+    font-family: var(--font-handwriting);
+    text-align: justify;
 }

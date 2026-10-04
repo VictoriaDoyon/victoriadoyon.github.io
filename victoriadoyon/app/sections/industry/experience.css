@@ -1,0 +1,7 @@
+.expNode .employer{
+    color: var(--contrast)
+}
+
+.expNode hgroup{
+    font-size: 1.5rem;
+}
