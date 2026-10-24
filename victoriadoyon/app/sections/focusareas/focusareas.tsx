@@ -1,39 +1,24 @@
 import { Node } from "@/app/components/node/node";
 import { FocusAreas } from "@/app/data";
-import "./focusareas.css"
-import "@/app/globals.css"
+import "./focusareas.css";
 
 export default function FocusAreasSection() {
     return (
-        <div>
-            <p className="note">{FocusAreas.Blurb}</p>
-            {FocusAreas.Areas.map((area, index) =>
-                <Node label={area.Title} key={`focus-area-${index}`}>
-                    <FocusNode title={area.Title} blurb={area.Blurb} tags={area.Tags}/>
-                </Node>
-            )}
-        </div>
-    );
-}
-
-interface Focus {
-    title: string
-    blurb: string
-    tags: string[]
-}
-
-function FocusNode(props: Focus) {
-    return (
-        <div className="focusnode">
-            <hgroup>
-                <h1>{props.title}</h1>
-            </hgroup>
-            <p>{props.blurb}</p>
-            <div className="focus-area-tags-div">
-                {props.tags.map((tag, index) => 
-                    <span className="focus-area-tag" key={`focus-area-skill-${index}`}>{tag}</span>
+        <section className="portfolio-group" id="focus-areas" aria-labelledby="focus-areas-title">
+            <h3 className="sr-only" id="focus-areas-title">Focus areas</h3>
+            <p className="group-intro">{FocusAreas.Blurb}</p>
+            <div className="group-cards">
+                {FocusAreas.Areas.map((area, index) =>
+                    <Node id={`focus-${index}`} label={area.Title} category="Focus area" key={area.Title}>
+                        <h4>{area.Title}</h4>
+                        <p>{area.Blurb}</p>
+                        <ul className="focus-area-tags" aria-label="Related skills">
+                            {area.Tags.map(tag => <li key={tag}>{tag}</li>)}
+                        </ul>
+                        {index < 2 && <a className="related-thread" href={`#interest-${index}`}>Related research <span aria-hidden="true">↗</span></a>}
+                    </Node>
                 )}
             </div>
-        </div>
+        </section>
     );
 }

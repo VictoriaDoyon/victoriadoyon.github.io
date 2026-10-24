@@ -1,20 +1,19 @@
-import "./node.css"
+import type { ReactNode } from "react";
+import "./node.css";
 
-export interface NodeParams{
-    label: string
-    children: React.ReactNode
-    // x: number;
-    // y: number;
-    // width: number;
-    // height: number;
+export interface NodeParams {
+    id: string;
+    label: string;
+    category?: string;
+    className?: string;
+    children: ReactNode;
 }
 
-export function Node(props: NodeParams) {
+export function Node({ id, label, category, className = "", children }: NodeParams) {
     return (
-        // <foreignObject x={props.x} y={props.y} width={props.width} height={props.height}>
-                <div className="node" aria-label={props.label}>
-                    {props.children}
-                </div>
-        // </foreignObject>
+        <article id={id} className={`node ${className}`} data-node-id={id} data-reveal-node aria-label={label} tabIndex={-1}>
+            {category && <p className="node-category">{category}</p>}
+            {children}
+        </article>
     );
 }

@@ -1,13 +1,46 @@
 .board {
-    width: calc(100% - 2rem);
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 1rem 0;
+    position: relative;
+    isolation: isolate;
+}
+/* Keep thread hit areas above empty layout wrappers; cards sit above the threads. */
+
+.board-threads {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    pointer-events: none;
+    z-index: 1;
 }
 
-.board svg {
-    display: block;
-    width: 100%;
-    height: auto;
-    overflow: visible;
+.landing {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+}
+
+.board[data-enhanced="true"] [data-reveal-node]:not([data-visible="true"]) {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.board [data-reveal-node] {
+    transition: opacity 420ms ease, border-color 180ms ease;
+}
+
+.board [data-reveal-node]:focus-within {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .board[data-enhanced="true"] [data-reveal-node]:not([data-visible="true"]) {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .board [data-reveal-node] {
+        transition: none;
+    }
 }

@@ -1,36 +1,20 @@
 import { Node } from "@/app/components/node/node";
 import { ResearchPublications } from "@/app/data";
-import "./research.css"
+import "./research.css";
 
 export default function Publications() {
     return (
-        <div>
-            {ResearchPublications.map((pub, index) =>
-                <Node label={pub.Title} key={`r-publication-${index}`}>
-                    <PublicationNode title={pub.Title} blurb={pub.Blurb} blabel={pub.Button} link={pub.Link}/>
-                </Node>
-            )}
-        </div>
-    );
-}
-
-interface Publication {
-    title: string
-    blurb: string
-    blabel: string
-    link: string
-}
-
-function PublicationNode(props: Publication) {
-    return (
-        <div className="pubnode">
-            <hgroup>
-                <h1>{props.title}</h1>
-            </hgroup>
-            <p>{props.blurb}</p>
-            <a href={props.link} target="_blank" rel="noopener noreferrer">
-                {props.blabel}
-            </a>
-        </div>
+        <section className="portfolio-group" id="publications" aria-labelledby="publications-title">
+            <h3 className="sr-only" id="publications-title">Publications</h3>
+            <div className="group-cards">
+                {ResearchPublications.map((pub, index) =>
+                    <Node id={`publication-${index}`} label={pub.Title} category="Publication" key={pub.Title}>
+                        <h4>{pub.Title}</h4>
+                        <p>{pub.Blurb}</p>
+                        {pub.Link ? <a href={pub.Link} target="_blank" rel="noopener noreferrer">{pub.Button}<span className="sr-only"> (opens in a new tab)</span></a> : <p className="publication-pending">Publication link forthcoming</p>}
+                    </Node>
+                )}
+            </div>
+        </section>
     );
 }

@@ -3,24 +3,22 @@ import Header from "./components/header/header";
 import Hero from "./components/hero/hero";
 import Board from "./components/board/board";
 import TwoLoves from "./sections/twoloves/twoloves";
-import FocusAreasSection from "./sections/focusareas/focusareas";
-import RInterests from "./sections/research/interests";
-import Publications from "./sections/research/publications";
 import CharacterSheet from "./sections/character-sheet/charsheet";
-import Industry from "./sections/industry/experience";
 
 export default function Home() {
   return (
     <>
-      <Header />
-      <Hero />
-      <TwoLoves />
-      <FocusAreasSection />
-      <RInterests />
-      <Publications />
-      <Industry />
-      {/* <Board /> */}
-      <CharacterSheet />
+      <a className="skip-link" href="#portfolio">Skip to portfolio</a>
+      <main id="main-content">
+        <Board>
+          <div className="landing">
+            <Header />
+            <Hero />
+          </div>
+          <TwoLoves />
+        </Board>
+        <CharacterSheet />
+      </main>
       <Footer />
     </>
   );

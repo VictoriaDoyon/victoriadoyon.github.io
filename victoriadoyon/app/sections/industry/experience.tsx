@@ -1,36 +1,21 @@
 import { Node } from "@/app/components/node/node";
 import { Experience } from "@/app/data";
-import "./experience.css"
+import "./experience.css";
 
 export default function Industry() {
     return (
-        <div>
-            {Experience.Work.map((position, index) =>
-                <Node label={position.Title} key={`industry-experience-${index}`}>
-                    <ExperienceNode title={position.Title} employer={position.Employer} start={position.Start} end={position.End} blurb={position.Blurb}/>
-                </Node>
-            )}
-        </div>
-    );
-}
-
-interface Exp {
-    title: string
-    blurb: string
-    employer: string
-    start: string
-    end: string
-}
-
-function ExperienceNode(props: Exp) {
-    return (
-        <div className="expNode">
-            <hgroup>
-                <h1 className="employer">{props.employer}</h1>
-                <h2>{props.title}</h2>
-            </hgroup>
-            <p>{props.start} — {props.end}</p>
-            <p>{props.blurb}</p>
-        </div>
+        <section className="portfolio-group" id="experience" aria-labelledby="experience-title">
+            <h3 className="sr-only" id="experience-title">Experience</h3>
+            <div className="group-cards">
+                {Experience.Work.map((position, index) =>
+                    <Node id={`experience-${index}`} label={`${position.Title} at ${position.Employer}`} category="Experience" key={`${position.Employer}-${position.Start}`}>
+                        <p className="experience-dates">{position.Start} — {position.End}</p>
+                        <h4>{position.Employer}</h4>
+                        <p className="experience-role">{position.Title}</p>
+                        {position.Blurb && <p>{position.Blurb}</p>}
+                    </Node>
+                )}
+            </div>
+        </section>
     );
 }

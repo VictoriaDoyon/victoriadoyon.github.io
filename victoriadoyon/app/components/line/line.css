@@ -1,63 +1,60 @@
 .line-connection {
+    --draw-progress: 0;
     pointer-events: none;
+}
+
+.line-connection path {
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 .line-connection__hitbox {
-    pointer-events: stroke;
     stroke: transparent;
 }
 
+.line-connection[data-complete="true"] .line-connection__hitbox {
+    pointer-events: stroke;
+}
+
 .line-connection__base {
-    stroke: var(--font-color-muted);
+    stroke: var(--thread-color);
     opacity: 0;
-    animation: base-line-on-load 1ms linear 1.2s forwards;
+    transition: opacity 240ms ease;
 }
 
 .line-connection__highlight {
-    pointer-events: none;
     stroke: var(--contrast);
     stroke-dasharray: 1;
-    stroke-dashoffset: 1;
-    animation: highlight-line-on-load 1.2s ease-in-out forwards;
+    stroke-dashoffset: calc(1 - var(--draw-progress));
+    transition: opacity 240ms ease;
 }
 
-.line-connection:hover .line-connection__highlight {
+.line-connection[data-complete="true"] .line-connection__base {
     opacity: 1;
-    animation: highlight-line-on-hover 1.2s ease-in-out forwards;
 }
 
-@keyframes base-line-on-load {
-    from,
-    to {
-        opacity: 1;
-    }
+.line-connection[data-complete="true"] .line-connection__highlight {
+    opacity: 0;
 }
 
-@keyframes highlight-line-on-load {
-    0% {
-        opacity: 1;
-        stroke-dashoffset: 1;
-    }
-
-    80% {
-        opacity: 1;
-        stroke-dashoffset: 0;
-    }
-
-    100% {
-        opacity: 0;
-        stroke-dashoffset: 0;
-    }
+.line-connection[data-kind="cross"] .line-connection__base,
+.line-connection[data-kind="cross"] .line-connection__highlight {
+    stroke-dasharray: 0.008 0.012;
+    stroke-dashoffset: 0;
+    opacity: 0;
 }
 
-@keyframes highlight-line-on-hover {
-    from {
-        opacity: 1;
-        stroke-dashoffset: 1;
-    }
+.line-connection[data-kind="cross"][data-complete="true"] .line-connection__base {
+    opacity: 0.6;
+}
 
-    to {
-        opacity: 1;
-        stroke-dashoffset: 0;
+.line-connection[data-complete="true"]:hover .line-connection__highlight,
+.line-connection[data-complete="true"][data-highlighted="true"] .line-connection__highlight {
+    opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .line-connection__base, .line-connection__highlight {
+        transition: none;
     }
 }

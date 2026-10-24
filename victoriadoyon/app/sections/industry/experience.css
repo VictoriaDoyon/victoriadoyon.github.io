@@ -1,7 +1,12 @@
-.expNode .employer{
-    color: var(--contrast)
+.node p.experience-dates {
+    color: var(--font-color-muted);
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    margin-bottom: 0.8rem;
 }
 
-.expNode hgroup{
-    font-size: 1.5rem;
+.node p.experience-role {
+    color: var(--contrast);
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
 }

@@ -1,12 +1,230 @@
-.twoloves {
-    display: flex;
+.portfolio-map {
+    width: min(100%, 90rem);
+    margin: 0 auto;
+    padding: 5rem clamp(1rem, 4vw, 4rem) 6rem;
 }
 
-.masknode {
-    display: flex;
-    flex-direction: column;
+.board-introduction {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(12rem, 0.7fr) minmax(0, 1fr);
+    align-items: start;
+    gap: 2rem;
+    margin-bottom: 7rem;
 }
 
-.masknode hgroup{
-    font-size: 1.5rem;
+.board-introduction > #consulting {
+    margin-top: 1rem;
+}
+
+.board-introduction > #research {
+    margin-top: 6rem;
+}
+
+.intersection-note {
+    position: relative;
+    z-index: 2;
+    align-self: center;
+    background: var(--background);
+    color: var(--font-color);
+    text-align: justify;
+    line-height: 2;
+}
+
+.portfolio-constellation {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 5rem 4rem;
+    align-items: start;
+}
+
+.portfolio-group {
+    min-width: 0;
+}
+
+.group-intro {
+    position: relative;
+    z-index: 2;
+    background: var(--background);
+    color: var(--font-color-muted);
+    font-size: 0.85rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.group-cards {
+    display: grid;
+    gap: 2rem;
+    align-items: start;
+}
+/*
+ * Shared, content-sized tracks let the semantic sections keep their labels
+ * and reading order while their cards occupy a scattered desktop pinboard.
+ * No card needs a fixed height or an absolute position.
+ */
+
+@media (min-width: 1100px) {
+    .portfolio-constellation {
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        grid-template-rows: repeat(7, auto);
+        gap: 2.5rem 1.25rem;
+    }
+
+    .portfolio-constellation > .portfolio-group,
+    .portfolio-constellation .group-cards {
+        display: grid;
+        grid-template-columns: subgrid;
+        grid-template-rows: subgrid;
+        grid-column: 1 / -1;
+        grid-row: 1 / -1;
+        align-items: start;
+        pointer-events: none;
+    }
+
+    .portfolio-constellation .node,
+    .portfolio-constellation .group-intro {
+        pointer-events: auto;
+        margin-bottom: 0;
+    }
+
+    #focus-areas > .group-intro {
+        grid-column: 1 / 6;
+        grid-row: 1;
+    }
+
+    #focus-0 {
+        grid-column: 2 / 6;
+        grid-row: 2;
+    }
+
+    #focus-1 {
+        grid-column: 5 / 9;
+        grid-row: 3;
+    }
+
+    #focus-2 {
+        grid-column: 2 / 6;
+        grid-row: 4;
+    }
+
+    #interest-0 {
+        grid-column: 8 / 12;
+        grid-row: 1;
+        margin-top: 1rem;
+    }
+
+    #interest-1 {
+        grid-column: 9 / -1;
+        grid-row: 2;
+        margin-top: 7rem;
+    }
+
+    #interest-2 {
+        grid-column: 1 / 5;
+        grid-row: 3;
+        margin-top: 6rem;
+    }
+
+    #interest-3 {
+        grid-column: 9 / -1;
+        grid-row: 4;
+        margin-top: 3rem;
+    }
+
+    #experience-0 {
+        grid-column: 1 / 5;
+        grid-row: 5;
+    }
+
+    #experience-1 {
+        grid-column: 5 / 9;
+        grid-row: 6;
+    }
+
+    #experience-2 {
+        grid-column: 2 / 6;
+        grid-row: 7;
+    }
+
+    #experience-3 {
+        grid-column: 9 / -1;
+        grid-row: 7;
+        margin-top: 4rem;
+    }
+
+    #publication-0 {
+        grid-column: 8 / 12;
+        grid-row: 5;
+        margin-top: 3rem;
+    }
+
+    #focus-0::before,
+    #interest-2::before,
+    #experience-1::before {
+        transform: translateX(-50%) rotate(6deg);
+    }
+
+    #focus-1::before,
+    #interest-1::before,
+    #experience-3::before {
+        transform: translateX(-50%) rotate(-8deg);
+    }
+}
+
+@media (min-width: 761px) and (max-width: 1099px) {
+    .board-introduction {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 2.5rem;
+    }
+
+    .intersection-note {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        width: min(100%, 34rem);
+        justify-self: center;
+    }
+
+    .portfolio-constellation {
+        gap: 5rem 2rem;
+    }
+
+    .group-cards > :nth-child(even) {
+        margin-left: 2rem;
+    }
+
+    #research-interests,
+    #publications {
+        margin-top: 5rem;
+    }
+}
+
+@media (max-width: 760px) {
+    .portfolio-map {
+        padding-inline: 1rem;
+        padding-top: 4rem;
+    }
+
+    .board-introduction,
+    .portfolio-constellation {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 3rem;
+        padding-left: 1.5rem;
+        padding-right: 0.5rem;
+    }
+
+    .board-introduction > #consulting,
+    .board-introduction > #research {
+        margin-top: 0;
+    }
+
+    .board-introduction {
+        margin-bottom: 4rem;
+    }
+
+    .portfolio-constellation {
+        gap: 4rem;
+    }
+
+    .intersection-note {
+        margin: 0;
+    }
 }

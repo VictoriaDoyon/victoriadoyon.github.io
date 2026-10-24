@@ -1,15 +1,23 @@
-.focusnode hgroup{
-    font-size: 1.5rem;
-}
-.focus-area-tags-div {
-    margin-top: 15px;
+.focus-area-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-top: 1.25rem;
+    list-style: none;
 }
 
-.focus-area-tag{
-    border: 3px solid var(--contrast);
-    border-radius: 5px;
-    background-color: var(--contrast);
-    color: var(--foreground);
-    margin: 10px;
-    padding: 0px 5px;
+.focus-area-tags li {
+    border: 1px solid var(--border-color);
+    color: var(--font-color-muted);
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    line-height: 1.6;
+    padding: 0.25rem 0.45rem;
+}
+
+.node a.related-thread {
+    gap: 0.5rem;
+    color: var(--font-color-muted);
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
 }

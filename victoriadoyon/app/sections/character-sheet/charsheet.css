@@ -3,11 +3,25 @@
     flex-direction: row;
 }
 
-.charactersheet-left{
+.charactersheet-left {
     display: flex;
+    flex-shrink: 0;
+    max-width: 100%;
 }
 
 .charactersheet-right {
     display: flex;
     flex-direction: column;
+    min-width: 0;
+}
+
+@media (max-width: 760px) {
+    .charactersheet {
+        flex-direction: column;
+    }
+
+    .charactersheet-left img {
+        max-width: 100%;
+        height: auto;
+    }
 }
