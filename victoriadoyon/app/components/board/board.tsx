@@ -42,13 +42,6 @@ export default function Board({ children }: { children: ReactNode }) {
 
         const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
         const narrow = window.matchMedia("(max-width: 760px)");
-        const notes = Array.from(board.querySelectorAll<HTMLElement>("[data-thread-note]"));
-        const noteGaps = notes.map(() => {
-            const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-            rect.setAttribute("fill", "black");
-            noteMaskRef.current?.appendChild(rect);
-            return rect;
-        });
         const nodes = new Map(Array.from(board.querySelectorAll<HTMLElement>("[data-node-id]")).map(node => [node.dataset.nodeId!, node]));
         const edges = connections.map(connection => ({
             ...connection,
@@ -85,15 +78,6 @@ export default function Board({ children }: { children: ReactNode }) {
             });
 
             if (geometryDirty) {
-                // Transparent notes interrupt only the ink underneath them, not the layout or route.
-                notes.forEach((note, index) => {
-                    const rect = note.getBoundingClientRect();
-                    const gap = noteGaps[index];
-                    gap.setAttribute("x", String(rect.left - bounds.left - 8));
-                    gap.setAttribute("y", String(rect.top - bounds.top - 8));
-                    gap.setAttribute("width", String(rect.width + 16));
-                    gap.setAttribute("height", String(rect.height + 16));
-                });
                 for (const edge of edges) {
                     const from = local(rects.get(edge.from)!);
                     const to = local(rects.get(edge.to)!);
@@ -215,7 +199,6 @@ export default function Board({ children }: { children: ReactNode }) {
         const observer = new ResizeObserver(measure);
         observer.observe(board);
         nodes.forEach(node => observer.observe(node));
-        notes.forEach(note => observer.observe(note));
         window.addEventListener("scroll", schedule, { passive: true });
         window.addEventListener("resize", measure);
         window.addEventListener("hashchange", onHashChange);
@@ -234,7 +217,6 @@ export default function Board({ children }: { children: ReactNode }) {
             disposed = true;
             cancelAnimationFrame(frame);
             observer.disconnect();
-            noteGaps.forEach(gap => gap.remove());
             window.removeEventListener("scroll", schedule);
             window.removeEventListener("resize", measure);
             window.removeEventListener("hashchange", onHashChange);

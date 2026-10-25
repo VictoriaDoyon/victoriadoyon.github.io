@@ -11,10 +11,10 @@ export default function TwoLoves() {
     return (
         <section className="portfolio-map" id="portfolio" aria-label="Professional portfolio" tabIndex={-1}>
             <div className="board-introduction">
-                <Node id="consulting" label="Consulting" className="node-hub">
-                    <h2 id="consulting-title">{TwoMasks.Consulting.Title}</h2>
-                    <p className="hub-subtitle">{TwoMasks.Consulting.Subtitle}</p>
-                    <p>{TwoMasks.Consulting.Blurb}</p>
+                <Node id="industry" label="Industry" className="node-hub">
+                    <h2 id="industry-title">{TwoMasks.Industry.Title}</h2>
+                    <p className="hub-subtitle">{TwoMasks.Industry.Subtitle}</p>
+                    <p>{TwoMasks.Industry.Blurb}</p>
                 </Node>
                 <Note className="intersection-note">{TwoMasks.Intersection}</Note>
                 <Node id="research" label="Research" className="node-hub">

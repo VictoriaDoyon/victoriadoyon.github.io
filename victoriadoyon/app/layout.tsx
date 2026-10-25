@@ -31,7 +31,7 @@ const playwriteBrasil = Playwrite_BR ({
 
 export const metadata: Metadata = {
   title: "Victoria Doyon — AI Systems Engineer & Researcher",
-  description: "Building and studying AI systems for the real world. Explore Victoria Doyon's consulting, research interests, publications, and engineering experience.",
+  description: "Building and studying AI systems for the real world. Explore Victoria Doyon's research interests, publications, and engineering experience.",
 };
 
 export default function RootLayout({

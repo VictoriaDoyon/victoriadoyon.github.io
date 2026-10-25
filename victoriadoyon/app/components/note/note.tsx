@@ -7,5 +7,5 @@ interface NoteProps {
 }
 
 export default function Note({ children, className = "" }: NoteProps) {
-    return <p className={`handwritten-note ${className}`} data-thread-note>{children}</p>;
+    return <p className={`handwritten-note ${className}`} data-reveal-note>{children}</p>;
 }

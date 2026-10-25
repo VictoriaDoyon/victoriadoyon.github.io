@@ -1,7 +1,8 @@
 .handwritten-note {
     min-width: 0;
-    background: transparent;
+    background: var(--contrast);
     font-family: var(--font-handwriting);
+    color: var(--foreground);
     font-size: 0.9rem;
     line-height: 2;
 }

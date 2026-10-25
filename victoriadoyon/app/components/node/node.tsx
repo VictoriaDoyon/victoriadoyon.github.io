@@ -12,7 +12,7 @@ export interface NodeParams {
 
 export function Node({ id, label, category, className = "", children }: NodeParams) {
     return (
-        <article id={id} className={`node ${className}`} data-node-id={id} data-reveal-node aria-label={label} tabIndex={-1}>
+        <article id={id} className={`node ${className}`} data-node-id={id} aria-label={label} tabIndex={-1}>
             {category && <p className="node-category">{category}</p>}
             {children}
             {getRelatedLinks(id).map(related => (

@@ -10,7 +10,6 @@ export default function Hero() {
                 <h1 id="hero-name">{AboutMe.Name}</h1>
                 <div className="hero-copy">
                     <p className="hero-role">{AboutMe.Title}</p>
-                    <p className="hero-credentials">{AboutMe.Subtitle}</p>
                     <p className="hero-blurb">{AboutMe.Blurb}</p>
                 </div>
             </div>

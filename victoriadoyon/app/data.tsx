@@ -8,3 +8,5 @@ export const ResearchInterests = Constants.Research.Interests
 export const ResearchPublications = Constants.Research.Publications
 export const TwoMasks = Constants.TwoMasks
 export const ResumeUrl = Constants.AboutMe.Resume
+export const Skills = Constants.Skills
+export const Stats = Constants.Stats

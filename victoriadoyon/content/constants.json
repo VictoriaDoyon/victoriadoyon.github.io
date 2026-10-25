@@ -1,8 +1,7 @@
 {
     "AboutMe": {
         "Name": "Victoria Doyon",
-        "Title": "AI Systems Engineer · Researcher",
-        "Subtitle": "Former Microsoft SWE II · MS CS @ U of U",
+        "Title": "AI Systems Engineer · Researcher · MS CS @ U of U",
         "Headline": "Building and studying AI systems for the real world.",
         "Location": "Salt Lake City, Utah",
         "Email": "victoria@victoriadoyon.dev",
@@ -20,11 +19,11 @@
         ]
     },
     "TwoMasks":{
-        "Consulting": {
+        "Industry": {
             "Title": "For engineering teams",
             "Subtitle": "Making AI work when the demo is over.",
             "Blurb": "I help teams design, evaluate, and productionize AI systems — particularly agentic workflows, RAG, evaluation infrastructure, and Responsible AI readiness.",
-            "AriaLabel": "consulting"
+            "AriaLabel": "industry"
         },
         "Research": {
             "Title": "For research",
@@ -118,5 +117,16 @@
         "Cases": [
             "problem → approach → architecture → evaluation → results → what I learned"
         ]
-    }
+    },
+    "Skills": [
+        {"Cat": "LANGUAGES", "Vals": "Python, Rust, TypeScript"},
+        {"Cat": "FRAMEWORKS", "Vals": "PyTorch, JAX, vLLM, HF Transformers"},
+        {"Cat": "DOMAINS", "Vals": "LLMs, Interpretability, Alignment, MLOps"}
+    ],
+    "Stats": [
+        ["6+",  "YEARS ACTIVE"],
+        ["12",  "PUBLICATIONS"],
+        ["204", "TOTAL CITATIONS"]
+    ]
+
 }
