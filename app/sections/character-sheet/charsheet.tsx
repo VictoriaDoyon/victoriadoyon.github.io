@@ -40,14 +40,14 @@ export default function CharacterSheet() {
                             ))}
                         </div>
                     </div>
-                    <div className="stats-grid">
+                    {/* <div className="stats-grid">
                         {Stats.length > 0 && Stats.map(([n, l]) => (
                         <div key={l} className="stats-card">
                             <div className="stats-value">{n}</div>
                             <div className="stats-key">{l}</div>
                         </div>
                         ))}
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>
