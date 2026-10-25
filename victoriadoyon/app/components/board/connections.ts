@@ -1,4 +1,4 @@
-import { Experience, FocusAreas, ResearchInterests, ResearchPublications } from "@/app/data";
+import { AboutMe, Experience, FocusAreas, ResearchInterests, ResearchPublications } from "@/app/data";
 
 export interface Connection {
     id: string;
@@ -19,3 +19,28 @@ export const connections: Connection[] = [
     { id: "evaluation-agents", from: "focus-0", to: "interest-0", kind: "cross" },
     { id: "retrieval-nlp", from: "focus-1", to: "interest-1", kind: "cross" },
 ];
+
+const nodeLabels = new Map<string, { title: string; category: string }>([
+    ["hero", { title: AboutMe.Name, category: "introduction" }],
+    ["consulting", { title: "Industry", category: "industry" }],
+    ["research", { title: "Research", category: "research" }],
+    ...FocusAreas.Areas.map((area, index): [string, { title: string; category: string }] =>
+        [`focus-${index}`, { title: area.Title, category: "focus area" }]),
+    ...ResearchInterests.map((interest, index): [string, { title: string; category: string }] =>
+        [`interest-${index}`, { title: interest.Topic, category: "research" }]),
+    ...Experience.Work.map((position, index): [string, { title: string; category: string }] =>
+        [`experience-${index}`, { title: `${position.Title} at ${position.Employer}`, category: "experience" }]),
+    ...ResearchPublications.map((publication, index): [string, { title: string; category: string }] =>
+        [`publication-${index}`, { title: publication.Title, category: "publication" }]),
+]);
+
+// The same explicit cross-links drive both the SVG threads and keyboard navigation.
+// A card can have any number of related cards, in either direction.
+export function getRelatedLinks(nodeId: string) {
+    return connections
+        .filter(connection => connection.kind === "cross" && (connection.from === nodeId || connection.to === nodeId))
+        .map(connection => {
+            const id = connection.from === nodeId ? connection.to : connection.from;
+            return { id, ...nodeLabels.get(id)! };
+        });
+}

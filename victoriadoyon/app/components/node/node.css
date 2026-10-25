@@ -59,6 +59,21 @@
     font-size: 0.85rem;
 }
 
+.node a.related-thread {
+    gap: 0.5rem;
+    color: var(--font-color-muted);
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    /* Reserve the existing space so keyboard focus does not move the cards. */
+    opacity: 0;
+    pointer-events: none;
+}
+
+.node a.related-thread:focus {
+    opacity: 1;
+    pointer-events: auto;
+}
+
 .node-hub {
     padding-block: 2rem;
 }

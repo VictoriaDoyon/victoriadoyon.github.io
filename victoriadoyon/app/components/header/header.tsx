@@ -8,7 +8,7 @@ export default function Header() {
       <a className="notebook-mark" href="#hero-name" aria-label="Victoria Doyon, back to introduction">Notebook no. 001<span aria-hidden="true"> / VD</span></a>
       <nav aria-label="Main navigation">
         <a href="#portfolio">Board</a>
-        <a href="#consulting">Consulting</a>
+        <a href="#industry">Industry</a>
         <a href="#research">Research</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>

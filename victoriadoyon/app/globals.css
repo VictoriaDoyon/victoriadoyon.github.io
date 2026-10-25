@@ -79,12 +79,6 @@ a, p, h1, h2, h3, h4 {
     color: var(--background);
 }
 
-.note {
-    padding: 1rem;
-    font-size: 0.9rem;
-    font-family: var(--font-handwriting);
-}
-
 .skip-link {
     position: fixed;
     top: 0.75rem;

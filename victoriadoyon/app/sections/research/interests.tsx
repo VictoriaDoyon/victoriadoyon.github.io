@@ -11,7 +11,6 @@ export default function RInterests() {
                     <Node id={`interest-${index}`} label={interest.Topic} category="Research interest" key={interest.Topic}>
                         <h4>{interest.Topic}</h4>
                         <p>{interest.Specifics}</p>
-                        {index < 2 && <a className="related-thread" href={`#focus-${index}`}>Related focus area <span aria-hidden="true">↗</span></a>}
                     </Node>
                 )}
             </div>

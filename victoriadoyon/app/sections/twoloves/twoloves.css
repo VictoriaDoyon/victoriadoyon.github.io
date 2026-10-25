@@ -24,10 +24,9 @@
     position: relative;
     z-index: 2;
     align-self: center;
-    background: var(--background);
+    padding: 1rem;
     color: var(--font-color);
     text-align: justify;
-    line-height: 2;
 }
 
 .portfolio-constellation {
@@ -44,10 +43,7 @@
 .group-intro {
     position: relative;
     z-index: 2;
-    background: var(--background);
     color: var(--font-color-muted);
-    font-size: 0.85rem;
-    line-height: 1.8;
     margin-bottom: 2rem;
 }
 

@@ -8,14 +8,16 @@ export default function Hero() {
                 <p className="hero-eyebrow">{AboutMe.Location} <span aria-hidden="true"> / </span> Engineering &amp; research</p>
                 <p className="hero-headline">{AboutMe.Headline}</p>
                 <h1 id="hero-name">{AboutMe.Name}</h1>
-                <div className="hero-copy" data-node-id="hero">
+                <div className="hero-copy">
                     <p className="hero-role">{AboutMe.Title}</p>
                     <p className="hero-credentials">{AboutMe.Subtitle}</p>
                     <p className="hero-blurb">{AboutMe.Blurb}</p>
-                    <span className="thread-origin" aria-hidden="true" />
                 </div>
             </div>
-            <a className="hero-scroll" href="#portfolio">Follow the threads <span aria-hidden="true">↓</span></a>
+            <div className="hero-thread-origin" data-node-id="hero">
+                <a className="hero-scroll" href="#portfolio">Follow the threads <span aria-hidden="true">↓</span></a>
+                <span className="thread-origin" aria-hidden="true" />
+            </div>
         </section>
     );
 }

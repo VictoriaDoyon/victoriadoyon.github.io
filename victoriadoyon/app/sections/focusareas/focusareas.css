@@ -7,17 +7,12 @@
 }
 
 .focus-area-tags li {
-    border: 1px solid var(--border-color);
-    color: var(--font-color-muted);
+    border: 1px solid var(--contrast);
+    border-radius: 5px;
+    color: var(--card-background);
+    background-color: var(--contrast);
     font-family: var(--font-mono);
     font-size: 0.6rem;
     line-height: 1.6;
     padding: 0.25rem 0.45rem;
-}
-
-.node a.related-thread {
-    gap: 0.5rem;
-    color: var(--font-color-muted);
-    font-family: var(--font-mono);
-    font-size: 0.65rem;
 }

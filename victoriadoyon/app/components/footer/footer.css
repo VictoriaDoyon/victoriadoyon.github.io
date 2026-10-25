@@ -8,7 +8,7 @@
 
 .site-footer a {
     margin: 0.3rem;
-    color: #C1C1C8;
+    color: #c1c1c89d;
 }
 
 .site-footer a:hover {
@@ -26,6 +26,10 @@
     opacity: 0.7;
     width: fit-content;
     white-space: nowrap;
+}
+
+.footer-links {
+    margin: 0 5rem;
 }
 
 .footer-note {

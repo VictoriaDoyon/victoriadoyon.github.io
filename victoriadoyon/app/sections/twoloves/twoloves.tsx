@@ -1,4 +1,5 @@
 import { Node } from "@/app/components/node/node";
+import Note from "@/app/components/note/note";
 import { TwoMasks } from "@/app/data";
 import FocusAreasSection from "../focusareas/focusareas";
 import Industry from "../industry/experience";
@@ -15,7 +16,7 @@ export default function TwoLoves() {
                     <p className="hub-subtitle">{TwoMasks.Consulting.Subtitle}</p>
                     <p>{TwoMasks.Consulting.Blurb}</p>
                 </Node>
-                <p className="note intersection-note">{TwoMasks.Intersection}</p>
+                <Note className="intersection-note">{TwoMasks.Intersection}</Note>
                 <Node id="research" label="Research" className="node-hub">
                     <h2 id="research-title">{TwoMasks.Research.Title}</h2>
                     <p className="hub-subtitle">{TwoMasks.Research.Subtitle}</p>
