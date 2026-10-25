@@ -22,9 +22,16 @@ export default function CharacterSheet() {
                 </div>
 
                 <div className="charactersheet-right">
-                    {AboutMe.Bio.map((paragraph, index) =>
-                        <p key={`bio-paragraph-${index}`}>{paragraph}</p>
-                    )}
+                    <div className="details">
+                        <label className="attribute-label" id="character-name">Name:</label>
+                        <h4 className="character-name ml-5" aria-labelledby="character-name">{AboutMe.Name}</h4>
+                        <label className="attribute-label" id="character-backstory">Backstory:</label>
+                        <article className="ml-5" aria-labelledby="character-backstory">
+                            {AboutMe.Bio.map((paragraph, index) =>
+                                <p key={`bio-paragraph-${index}`}>{paragraph}</p>
+                            )}
+                        </article>
+                    </div>
                     <div className="stats-grid">
                         {Stats.map(([n, l]) => (
                         <div key={l} className="stats-card">
