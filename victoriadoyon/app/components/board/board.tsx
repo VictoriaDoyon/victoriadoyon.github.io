@@ -1,13 +1,12 @@
 "use client";
 
-import { useEffect, useRef, type ReactNode } from "react";
+import { useEffect, useId, useRef, type ReactNode } from "react";
 import Line from "../line/line";
 import { connections } from "./connections";
 import "./board.css";
 
 const clamp = (value: number) => Math.min(1, Math.max(0, value));
 
-// Round orthogonal routes without fixing cards to SVG coordinates.
 function roundedRoute(points: { x: number; y: number }[]) {
     let path = `M ${points[0].x} ${points[0].y}`;
     for (let index = 1; index < points.length - 1; index++) {
@@ -18,8 +17,14 @@ function roundedRoute(points: { x: number; y: number }[]) {
         const after = Math.hypot(next.x - point.x, next.y - point.y);
         const radius = Math.min(22, before / 2, after / 2);
         if (!before || !after) continue;
-        const entry = { x: point.x + (previous.x - point.x) * radius / before, y: point.y + (previous.y - point.y) * radius / before };
-        const exit = { x: point.x + (next.x - point.x) * radius / after, y: point.y + (next.y - point.y) * radius / after };
+        const entry = {
+            x: point.x + (previous.x - point.x) * radius / before,
+            y: point.y + (previous.y - point.y) * radius / before,
+        };
+        const exit = {
+            x: point.x + (next.x - point.x) * radius / after,
+            y: point.y + (next.y - point.y) * radius / after,
+        };
         path += ` L ${entry.x} ${entry.y} Q ${point.x} ${point.y} ${exit.x} ${exit.y}`;
     }
     const last = points[points.length - 1];
@@ -28,6 +33,8 @@ function roundedRoute(points: { x: number; y: number }[]) {
 
 export default function Board({ children }: { children: ReactNode }) {
     const boardRef = useRef<HTMLDivElement>(null);
+    const noteMaskRef = useRef<SVGGElement>(null);
+    const noteMaskId = useId();
 
     useEffect(() => {
         const board = boardRef.current;
@@ -35,6 +42,13 @@ export default function Board({ children }: { children: ReactNode }) {
 
         const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
         const narrow = window.matchMedia("(max-width: 760px)");
+        const notes = Array.from(board.querySelectorAll<HTMLElement>("[data-thread-note]"));
+        const noteGaps = notes.map(() => {
+            const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+            rect.setAttribute("fill", "black");
+            noteMaskRef.current?.appendChild(rect);
+            return rect;
+        });
         const nodes = new Map(Array.from(board.querySelectorAll<HTMLElement>("[data-node-id]")).map(node => [node.dataset.nodeId!, node]));
         const edges = connections.map(connection => ({
             ...connection,
@@ -71,6 +85,15 @@ export default function Board({ children }: { children: ReactNode }) {
             });
 
             if (geometryDirty) {
+                // Transparent notes interrupt only the ink underneath them, not the layout or route.
+                notes.forEach((note, index) => {
+                    const rect = note.getBoundingClientRect();
+                    const gap = noteGaps[index];
+                    gap.setAttribute("x", String(rect.left - bounds.left - 8));
+                    gap.setAttribute("y", String(rect.top - bounds.top - 8));
+                    gap.setAttribute("width", String(rect.width + 16));
+                    gap.setAttribute("height", String(rect.height + 16));
+                });
                 for (const edge of edges) {
                     const from = local(rects.get(edge.from)!);
                     const to = local(rects.get(edge.to)!);
@@ -192,6 +215,7 @@ export default function Board({ children }: { children: ReactNode }) {
         const observer = new ResizeObserver(measure);
         observer.observe(board);
         nodes.forEach(node => observer.observe(node));
+        notes.forEach(note => observer.observe(note));
         window.addEventListener("scroll", schedule, { passive: true });
         window.addEventListener("resize", measure);
         window.addEventListener("hashchange", onHashChange);
@@ -210,6 +234,7 @@ export default function Board({ children }: { children: ReactNode }) {
             disposed = true;
             cancelAnimationFrame(frame);
             observer.disconnect();
+            noteGaps.forEach(gap => gap.remove());
             window.removeEventListener("scroll", schedule);
             window.removeEventListener("resize", measure);
             window.removeEventListener("hashchange", onHashChange);
@@ -227,7 +252,15 @@ export default function Board({ children }: { children: ReactNode }) {
     return (
         <div className="board" ref={boardRef}>
             <svg className="board-threads" aria-hidden="true" focusable="false">
-                {connections.map(connection => <Line key={connection.id} id={connection.id} kind={connection.kind} />)}
+                <defs>
+                    <mask id={noteMaskId} maskUnits="userSpaceOnUse">
+                        <rect width="100%" height="100%" fill="white" />
+                        <g ref={noteMaskRef} />
+                    </mask>
+                </defs>
+                <g mask={`url(#${noteMaskId})`}>
+                    {connections.map(connection => <Line key={connection.id} id={connection.id} kind={connection.kind} />)}
+                </g>
             </svg>
             {children}
         </div>
