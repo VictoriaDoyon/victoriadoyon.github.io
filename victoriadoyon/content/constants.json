@@ -1,0 +1,129 @@
+{
+    "AboutMe": {
+        "Name": "Victoria Doyon",
+        "Title": "AI Systems Engineer · Researcher · MS CS @ U of U",
+        "Headline": "Building and studying AI systems for the real world.",
+        "Location": "Salt Lake City, Utah",
+        "Email": "victoria@victoriadoyon.dev",
+        "LinkedIn": "https://www.linkedin.com/in/victoriadoyon/",
+        "GitHub": "https://github.com/VictoriaDoyon",
+        "Blurb": "I'm Victoria Doyon — an AI systems engineer and M.S. Computer Science student working across agentic AI, retrieval, evaluation, and production ML systems.\nMy work sits at the intersection of building AI that works in the real world and studying how we can make intelligent systems more reliable, understandable, and capable.",
+        "Resume": "https://link_to_resume.com",
+        "Bio": [
+            "I got interested in artificial intelligence by first being interested in human intelligence.",
+            "Before I discovered programming and robotics, I planned to study neurology. The career path changed, but the question didn't: what can understanding the way humans think and learn teach us about building intelligent systems?",
+            "That curiosity eventually took me from computer engineering into conversational AI and NLP, then into several years of production software engineering at Microsoft, where my work increasingly focused on retrieval, AI infrastructure, agentic systems, evaluation, reliability, and Responsible AI.",
+            "Today, I'm pursuing an M.S. in Computer Science at the University of Utah while continuing to build AI systems and explore the research questions behind them.",
+            "I tend to gravitate toward messy problems: systems that cross boundaries, models whose failures aren't obvious, and technical questions that require understanding both how something works and why it behaves the way it does.",
+            "Outside the technical work, I care a lot about teaching, mentorship, and making technical communities more welcoming — things I've been involved in throughout both university and industry."
+        ]
+    },
+    "TwoMasks":{
+        "Industry": {
+            "Title": "For engineering teams",
+            "Subtitle": "Making AI work when the demo is over.",
+            "Blurb": "I help teams design, evaluate, and productionize AI systems — particularly agentic workflows, RAG, evaluation infrastructure, and Responsible AI readiness.",
+            "AriaLabel": "industry"
+        },
+        "Research": {
+            "Title": "For research",
+            "Subtitle": "Understanding how we can make AI better.",
+            "Blurb": "I'm interested in research around LLM and agent evaluation, retrieval, NLP, explainable and Responsible AI, and the intersection of machine learning and neuroscience.",
+            "AriaLabel": "research"
+        },
+        "Intersection": "To me, these aren't separate interests. Better research informs better systems, and production systems expose the questions worth researching."
+    },
+    "FocusAreas": {
+        "Blurb": "I work on the parts of AI systems where model behavior meets software engineering: retrieval, agents, evaluation, infrastructure, and the safeguards that make them dependable.",
+        "Areas": [
+            {
+                "Title": "Agent Evaluation & Reliability",
+                "Blurb": "Testing how agentic systems behave, where they fail, and whether they can be trusted outside controlled demos.",
+                "Tags": ["Evaluation", "Failure Analysis", "Observability", "Responsible AI"]
+            },
+            {
+                "Title": "Retrieval & Grounded AI",
+                "Blurb": "Designing retrieval systems that give models the right information at the right time — and measuring whether that grounding actually improves the result.",
+                "Tags": ["RAG", "Vector Search", "Data Pipelines", "Retrieval Evaluation"]
+            },
+            {
+                "Title": "AI Systems Architecture",
+                "Blurb": "Taking AI capabilities from prototype to production through scalable architecture, deployment, testing, security, and operational readiness.",
+                "Tags": ["Architecture", "MlLOps", "Cloud", "Production Readiness"]
+            }
+        ]
+    },
+    "Research": {
+        "Interests": [
+            {
+                "Topic": "Intelligent Agents",
+                "Specifics": " Evaluation, reasoning, tool use, failure modes, reliability"
+            },
+            {
+                "Topic": "Retrieval & NLP",
+                "Specifics": "Grounded generation, information retrieval, language understanding"
+            },
+            {
+                "Topic": "Human & Machine Intelligence",
+                "Specifics": "Neuroscience applications of ML and neuroscience-inspired intelligent systems"
+            },
+            {
+                "Topic": "Responsible / Explainable AI",
+                "Specifics": "Interpretability, transparency, safety, provenance, responsible deployment"
+            }
+        ],
+        "Publications": [
+            {
+                "Title": "A Photo-Realistic Simulation and Test Platform for Autonomous Vehicles Research",
+                "Link": "",
+                "Blurb": "My first published research project explored machine-learning-based autonomous driving in a photo-realistic simulation environment, connecting steering prediction models with MATLAB and Unreal Engine.",
+                "Button": "Read publication"
+            }
+        ]
+    },
+    "Experience": {
+        "Work": [
+            {
+                "Title": "Program Assistant (CHPC)",
+                "Employer": "University of Utah / SCI Institute",
+                "Start": "2026",
+                "End": "Present",
+                "Blurb": ""
+            },
+            {
+                "Title": "Software Engineer II",
+                "Employer": "Microsoft",
+                "Start": "2024",
+                "End": "2026",
+                "Blurb": "Agentic AI · RAG & AI Search · Responsible AI · AI infrastructure · Production Reliability"
+            },
+            {
+                "Title": "Software Engineer",
+                "Employer": "Microsoft",
+                "Start": "2022",
+                "End": "2024",
+                "Blurb": "Full-stack systems · Anomaly Detection · Cloud Infrastructure · Security · Operational Engineering"
+            },
+            {
+                "Title": "Engineer",
+                "Employer": "HereAfter AI",
+                "Start": "2021",
+                "End": "2022",
+                "Blurb": "Conversational AI · NLP · Transformer Experimentation · Full-stack Development"
+            }
+        ]
+    },
+    "Projects":{
+        "Cases": [
+            "problem → approach → architecture → evaluation → results → what I learned"
+        ]
+    },
+    "Skills": [
+        {"Cat": "LANGUAGES", "Vals": "Python, Rust, TypeScript"},
+        {"Cat": "FRAMEWORKS", "Vals": "PyTorch, JAX, vLLM, HF Transformers"},
+        {"Cat": "DOMAINS", "Vals": "LLMs, Interpretability, Alignment, MLOps"}
+    ],
+    "Stats": [
+    ]
+
+}

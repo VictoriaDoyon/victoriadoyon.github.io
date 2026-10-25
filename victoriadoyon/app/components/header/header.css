@@ -1,0 +1,61 @@
+.site-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem 2rem;
+    padding: 0.8rem clamp(1.25rem, 4vw, 4rem);
+    /* border-bottom: 1px solid var(--border-color); */
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+}
+
+.notebook-mark {
+    color: var(--contrast);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    min-height: 44px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+.notebook-mark span {
+    color: var(--font-color-muted);
+}
+
+.site-header nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.4rem;
+}
+
+.site-header nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--font-color-muted);
+    /* Reserve the existing space so keyboard focus does not move the cards. */
+    opacity: 0;
+    pointer-events: none;
+}
+
+.site-header nav a:focus {
+    opacity: 1;
+    pointer-events: auto;
+    color: var(--contrast);
+}
+
+@media (max-width: 760px) {
+    .site-header {
+        justify-content: center;
+        padding-block: 0.5rem;
+        gap: 0;
+    }
+
+    .site-header nav {
+        justify-content: center;
+        column-gap: 1.1rem;
+        width: 100%;
+    }
+}

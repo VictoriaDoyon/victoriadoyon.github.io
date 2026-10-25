@@ -1,0 +1,5 @@
+.node p.publication-pending {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    margin-top: 1.25rem;
+}

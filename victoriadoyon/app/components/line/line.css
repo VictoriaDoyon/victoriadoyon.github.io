@@ -1,0 +1,60 @@
+.line-connection {
+    --draw-progress: 0;
+    pointer-events: none;
+}
+
+.line-connection path {
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.line-connection__hitbox {
+    stroke: transparent;
+}
+
+.line-connection[data-complete="true"] .line-connection__hitbox {
+    pointer-events: stroke;
+}
+
+.line-connection__base {
+    stroke: var(--thread-color);
+    opacity: 0;
+    transition: opacity 240ms ease;
+}
+
+.line-connection__highlight {
+    stroke: var(--contrast);
+    stroke-dasharray: 1;
+    stroke-dashoffset: calc(1 - var(--draw-progress));
+    transition: opacity 240ms ease;
+}
+
+.line-connection[data-complete="true"] .line-connection__base {
+    opacity: 1;
+}
+
+.line-connection[data-complete="true"] .line-connection__highlight {
+    opacity: 0;
+}
+
+.line-connection[data-kind="cross"] .line-connection__base,
+.line-connection[data-kind="cross"] .line-connection__highlight {
+    stroke-dasharray: 0.008 0.012;
+    stroke-dashoffset: 0;
+    opacity: 0;
+}
+
+.line-connection[data-kind="cross"][data-complete="true"] .line-connection__base {
+    opacity: 0.6;
+}
+
+.line-connection[data-complete="true"]:hover .line-connection__highlight,
+.line-connection[data-complete="true"][data-highlighted="true"] .line-connection__highlight {
+    opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .line-connection__base, .line-connection__highlight {
+        transition: none;
+    }
+}

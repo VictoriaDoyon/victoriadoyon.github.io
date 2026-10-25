@@ -1,0 +1,96 @@
+@import "tailwindcss";
+/* Shared notebook palette and typography. */
+
+:root {
+    --background: #141418;
+    --foreground: #141418;
+    --card-background: #1a1a20;
+    --font-color: #f5f3ff;
+    --font-color-muted: #c1c1c8;
+    --contrast: #ecb1bb;
+    --border-color: #44444e;
+    --thread-color: #777782;
+    --shadow: rgba(0,0,0,0.55);
+    --font-heading: var(--font-cormorant-garamond), Georgia, serif;
+    --font-body: var(--font-inter), system-ui, sans-serif;
+    --font-mono: var(--font-geist-mono), 'Courier New', monospace;
+    --font-name: var(--font-special-elite), 'Courier New', monospace;
+    --font-handwriting: var(--font-playwrite-brasil), cursive;
+    color-scheme: dark;
+}
+
+@theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --font-sans: var(--font-inter);
+    --font-mono: var(--font-geist-mono);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-padding-top: 1.5rem;
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--font-color);
+    font-family: var(--font-body);
+}
+
+main {
+    width: 100%;
+    min-width: 0;
+}
+
+h1 {
+    color: var(--contrast);
+    font-family: var(--font-heading);
+}
+
+h2, h3 {
+    color: var(--font-color);
+    font-family: var(--font-heading);
+}
+
+a {
+    color: inherit;
+    text-underline-offset: 4px;
+}
+
+a:hover {
+    color: var(--contrast);
+}
+
+a, p, h1, h2, h3, h4 {
+    overflow-wrap: anywhere;
+}
+
+:focus-visible {
+    outline: 2px solid var(--contrast);
+    outline-offset: 5px;
+}
+
+::selection {
+    background: var(--contrast);
+    color: var(--background);
+}
+
+.skip-link {
+    position: fixed;
+    top: 0.75rem;
+    left: 0.75rem;
+    z-index: 10;
+    padding: 0.8rem 1rem;
+    background: var(--contrast);
+    color: var(--background);
+    transform: translateY(-200%);
+}
+
+.skip-link:focus {
+    transform: none;
+    color: var(--background);
+}
