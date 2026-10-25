@@ -124,9 +124,6 @@
         {"Cat": "DOMAINS", "Vals": "LLMs, Interpretability, Alignment, MLOps"}
     ],
     "Stats": [
-        ["6+",  "YEARS ACTIVE"],
-        ["12",  "PUBLICATIONS"],
-        ["204", "TOTAL CITATIONS"]
     ]
 
 }

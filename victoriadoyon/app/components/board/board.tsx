@@ -42,6 +42,7 @@ export default function Board({ children }: { children: ReactNode }) {
 
         const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
         const narrow = window.matchMedia("(max-width: 760px)");
+        const notes = Array.from(board.querySelectorAll<HTMLElement>("[data-reveal-note]"));
         const nodes = new Map(Array.from(board.querySelectorAll<HTMLElement>("[data-node-id]")).map(node => [node.dataset.nodeId!, node]));
         const edges = connections.map(connection => ({
             ...connection,
@@ -128,6 +129,11 @@ export default function Board({ children }: { children: ReactNode }) {
             }
 
             const height = window.innerHeight;
+            notes.forEach(note => {
+                if (motion.matches || note.getBoundingClientRect().top <= height * 0.9) {
+                    note.dataset.visible = "true";
+                }
+            });
             for (const edge of edges) {
                 let value = motion.matches ? 1 : progress.get(edge.id) ?? 0;
                 if (!motion.matches) {

@@ -1,16 +1,16 @@
 import { AboutMe, Skills, Stats } from "@/app/data";
 import Image from "next/image";
-import profile from "@/public/vercel.svg";
+// import profile from "../../../public/IMG_";
 import "./charsheet.css";
 
 export default function CharacterSheet() {
     return (
-        <div id="about" className="flex flex-col items-center mx-60 mb-15">
-            <h4 className="section-title">Detailed Character Bio</h4>
+        <div id="about" className="character-bio flex flex-col items-center mx-60 mb-15">
+            <h2 className="section-title">Detailed Character Bio</h2>
             <div className="charactersheet">
 
                 <div className="charactersheet-left">
-                    <Image alt="Victoria" src={profile} width={300} height={300} className="m-5"/>
+                    <Image alt="" src="/IMG_6180.jpg" width={300} height={300} className="m-5"/>
                     <div className="skills">
                         {Skills.map(({ Cat, Vals }) => (
                             <div key={Cat} className="skill">
