@@ -6,3 +6,8 @@
     font-size: 0.9rem;
     line-height: 2;
 }
+
+.handwritten-note::selection {
+    background-color: var(--background);
+    color: var(--contrast);
+}

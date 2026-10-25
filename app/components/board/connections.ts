@@ -18,6 +18,7 @@ export const connections: Connection[] = [
     ...ResearchPublications.map((_, index) => ({ id: `research-publication-${index}`, from: "research", to: `publication-${index}`, kind: "branch" as const })),
     { id: "evaluation-agents", from: "focus-0", to: "interest-0", kind: "cross" },
     { id: "retrieval-nlp", from: "focus-1", to: "interest-1", kind: "cross" },
+    { id: "microsoft-tenure", from: "experience-1", to: "experience-2", kind: "cross" },
 ];
 
 const nodeLabels = new Map<string, { title: string; category: string }>([

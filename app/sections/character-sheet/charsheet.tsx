@@ -1,4 +1,4 @@
-import { AboutMe, Skills, Stats } from "@/app/data";
+import { AboutMe, Education, Skills, Stats } from "@/app/data";
 import Image from "next/image";
 // import profile from "../../../public/IMG_";
 import "./charsheet.css";
@@ -10,7 +10,7 @@ export default function CharacterSheet() {
             <div className="charactersheet">
 
                 <div className="charactersheet-left">
-                    <Image alt="" src="/IMG_6180.jpg" width={300} height={300} className="m-5"/>
+                    <Image alt="" src="/IMG_6180.jpg" width={300} height={300}/>
                     <div className="skills">
                         {Skills.map(({ Cat, Vals }) => (
                             <div key={Cat} className="skill">
@@ -24,13 +24,21 @@ export default function CharacterSheet() {
                 <div className="charactersheet-right">
                     <div className="details">
                         <label className="attribute-label" id="character-name">Name:</label>
-                        <h4 className="character-name ml-5" aria-labelledby="character-name">{AboutMe.Name}</h4>
+                        <h4 className="character-name" aria-labelledby="character-name">{AboutMe.Name}</h4>
                         <label className="attribute-label" id="character-backstory">Backstory:</label>
-                        <article className="ml-5" aria-labelledby="character-backstory">
+                        <article className="mb-5" aria-labelledby="character-backstory">
                             {AboutMe.Bio.map((paragraph, index) =>
                                 <p key={`bio-paragraph-${index}`}>{paragraph}</p>
                             )}
                         </article>
+                        <label className="attribute-label" id="character-education">Education:</label>
+                        <div>
+                            {Education.map((degree) => (
+                                <p key={degree.Major}>
+                                    {degree.Major} - {degree.University}
+                                </p>
+                            ))}
+                        </div>
                     </div>
                     <div className="stats-grid">
                         {Stats.map(([n, l]) => (

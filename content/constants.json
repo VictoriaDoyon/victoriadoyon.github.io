@@ -13,7 +13,7 @@
             "I got interested in artificial intelligence by first being interested in human intelligence.",
             "Before I discovered programming and robotics, I planned to study neurology. The career path changed, but the question didn't: what can understanding the way humans think and learn teach us about building intelligent systems?",
             "That curiosity eventually took me from computer engineering into conversational AI and NLP, then into several years of production software engineering at Microsoft, where my work increasingly focused on retrieval, AI infrastructure, agentic systems, evaluation, reliability, and Responsible AI.",
-            "Today, I'm pursuing an M.S. in Computer Science at the University of Utah while continuing to build AI systems and explore the research questions behind them.",
+            "Today, I'm pursuing an M.S. in Computer Science at the University of Utah, researching ethical and interpretable AI informed by neuroscience, and asking whether what we know about human cognition and neurobiology can improve how we build AI. I also continue to build AI infrastructure at the university's Center for High Performance Computing.",
             "I tend to gravitate toward messy problems: systems that cross boundaries, models whose failures aren't obvious, and technical questions that require understanding both how something works and why it behaves the way it does.",
             "Outside the technical work, I care a lot about teaching, mentorship, and making technical communities more welcoming — things I've been involved in throughout both university and industry."
         ]
@@ -28,13 +28,13 @@
         "Research": {
             "Title": "For research",
             "Subtitle": "Understanding how we can make AI better.",
-            "Blurb": "I'm interested in research around LLM and agent evaluation, retrieval, NLP, explainable and Responsible AI, and the intersection of machine learning and neuroscience.",
+            "Blurb": "I'm interested in ethical and interpretable AI informed by neuroscience: whether new or existing AI and machine learning mechanisms can be created or improved by analyzing principles and behaviors of human cognition and neurobiology.",
             "AriaLabel": "research"
         },
         "Intersection": "To me, these aren't separate interests. Better research informs better systems, and production systems expose the questions worth researching."
     },
     "FocusAreas": {
-        "Blurb": "I work on the parts of AI systems where model behavior meets software engineering: retrieval, agents, evaluation, infrastructure, and the safeguards that make them dependable.",
+        "Blurb": "I work on the parts of systems where model behavior meets software engineering: retrieval, agents, evaluation, infrastructure, and the safeguards that make them dependable.",
         "Areas": [
             {
                 "Title": "Agent Evaluation & Reliability",
@@ -49,7 +49,7 @@
             {
                 "Title": "AI Systems Architecture",
                 "Blurb": "Taking AI capabilities from prototype to production through scalable architecture, deployment, testing, security, and operational readiness.",
-                "Tags": ["Architecture", "MlLOps", "Cloud", "Production Readiness"]
+                "Tags": ["Architecture", "MLOps", "Cloud", "Production Readiness"]
             }
         ]
     },
@@ -57,26 +57,32 @@
         "Interests": [
             {
                 "Topic": "Intelligent Agents",
-                "Specifics": " Evaluation, reasoning, tool use, failure modes, reliability"
+                "Specifics": "Evaluation, reasoning, tool use, failure modes, reliability"
             },
             {
                 "Topic": "Retrieval & NLP",
                 "Specifics": "Grounded generation, information retrieval, language understanding"
             },
             {
-                "Topic": "Human & Machine Intelligence",
-                "Specifics": "Neuroscience applications of ML and neuroscience-inspired intelligent systems"
+                "Topic": "Neuroscience-informed AI",
+                "Specifics": "Whether AI/ML mechanisms can be created or improved by analyzing principles and behaviors of human cognition and neurobiology"
             },
             {
-                "Topic": "Responsible / Explainable AI",
+                "Topic": "Ethical & Interpretable AI (Responsible AI)",
                 "Specifics": "Interpretability, transparency, safety, provenance, responsible deployment"
             }
         ],
         "Publications": [
             {
                 "Title": "A Photo-Realistic Simulation and Test Platform for Autonomous Vehicles Research",
-                "Link": "",
+                "Link": "https://doi.org/10.46254/NA07.20220424",
                 "Blurb": "My first published research project explored machine-learning-based autonomous driving in a photo-realistic simulation environment, connecting steering prediction models with MATLAB and Unreal Engine.",
+                "Button": "Read publication"
+            },
+            {
+                "Title": "AI-Driven Traffic Flow Optimization at Intersections Enhancing Efficiency and Safety",
+                "Link": "https://doi.org/10.46254/NA10.20250340",
+                "Blurb": "A preliminary study training a shared-policy PPO agent on collision-avoidance scenarios derived from the DeepAccident dataset. The work established a working training pipeline, but it was a proof of concept.",
                 "Button": "Read publication"
             }
         ]
@@ -85,10 +91,10 @@
         "Work": [
             {
                 "Title": "Program Assistant (CHPC)",
-                "Employer": "University of Utah / SCI Institute",
+                "Employer": "Center for High Performance Computing, University of Utah",
                 "Start": "2026",
                 "End": "Present",
-                "Blurb": ""
+                "Blurb": "Responsible AI · AI infrastructure · Security & guardrails · LLM inference · Research Support · HPC"
             },
             {
                 "Title": "Software Engineer II",
@@ -113,15 +119,26 @@
             }
         ]
     },
+    "Education": [
+        {
+            "University": "Florida Polytechnic University",
+            "Major": "B.S. Computer Engineering (Machine Intelligence)"
+        },
+        {
+            "University": "University of Utah",
+            "Major": "M.S. Computer Science"
+        }
+    ],
     "Projects":{
         "Cases": [
             "problem → approach → architecture → evaluation → results → what I learned"
         ]
     },
     "Skills": [
-        {"Cat": "LANGUAGES", "Vals": "Python, Rust, TypeScript"},
-        {"Cat": "FRAMEWORKS", "Vals": "PyTorch, JAX, vLLM, HF Transformers"},
-        {"Cat": "DOMAINS", "Vals": "LLMs, Interpretability, Alignment, MLOps"}
+        {"Cat": "LANGUAGES", "Vals": "Python, C#/.NET, JavaScript, TypeScript, Node.js"},
+        {"Cat": "FRAMEWORKS", "Vals": "PyTorch, TensorFlow, Scikit-learn, LangChain, Semantic Kernel, AutoGen, React, Next.js, HF Transformers"},
+        {"Cat": "DOMAINS", "Vals": "LLMs, Agentic AI, RAG & Vector Search, LLM Evaluation, NLP, MLOps, Responsible AI"},
+        {"Cat": "INFRASTRUCTURE", "Vals": "Kubernetes, CI/CD, Infrastructure as Code, Docker"}
     ],
     "Stats": [
     ]
