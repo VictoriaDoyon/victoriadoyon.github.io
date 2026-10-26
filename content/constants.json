@@ -9,6 +9,7 @@
         "GitHub": "https://github.com/VictoriaDoyon",
         "Blurb": "I'm Victoria Doyon — an AI systems engineer and M.S. Computer Science student working across agentic AI, retrieval, evaluation, and production ML systems.\nMy work sits at the intersection of building AI that works in the real world and studying how we can make intelligent systems more reliable, understandable, and capable.",
         "Resume": "https://link_to_resume.com",
+        "CV": "/cv.pdf",
         "Bio": [
             "I got interested in artificial intelligence by first being interested in human intelligence.",
             "Before I discovered programming and robotics, I planned to study neurology. The career path changed, but the question didn't: what can understanding the way humans think and learn teach us about building intelligent systems?",

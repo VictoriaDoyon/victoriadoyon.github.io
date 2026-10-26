@@ -11,6 +11,7 @@ export default function Footer() {
                     <Link href={`mailto:${AboutMe.Email}`} aria-label="Email Victoria Doyon">Email <span aria-hidden="true">↗</span></Link>
                     <Link href={AboutMe.LinkedIn} target="_blank">LinkedIn <span aria-hidden="true">↗</span></Link>
                     <Link href={AboutMe.GitHub} target="_blank">GitHub <span aria-hidden="true">↗</span></Link>
+                    <Link href={AboutMe.CV} target="_blank">Curriculum Vitae <span aria-hidden="true">↗</span></Link>
                 </nav>
             </div>
             <div className="footer-note">— TWO THREADS, ONE MANUSCRIPT —</div>
