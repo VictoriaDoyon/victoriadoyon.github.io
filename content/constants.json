@@ -79,12 +79,6 @@
                 "Link": "https://doi.org/10.46254/NA07.20220424",
                 "Blurb": "My first published research project explored machine-learning-based autonomous driving in a photo-realistic simulation environment, connecting steering prediction models with MATLAB and Unreal Engine.",
                 "Button": "Read publication"
-            },
-            {
-                "Title": "AI-Driven Traffic Flow Optimization at Intersections Enhancing Efficiency and Safety",
-                "Link": "https://doi.org/10.46254/NA10.20250340",
-                "Blurb": "A preliminary study training a shared-policy PPO agent on collision-avoidance scenarios derived from the DeepAccident dataset. The work established a working training pipeline, but it was a proof of concept.",
-                "Button": "Read publication"
             }
         ]
     },
